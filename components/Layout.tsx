@@ -32,9 +32,9 @@ export default function Layout({ children, title = "Suzue" }: Props) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <header>
+      <header style={{ position: "sticky", top: 0, backgroundColor: "white" }}>
         <div style={{ display: "flex" }}>
-          <p style={{ margin: 0, paddingRight: "15px", fontWeight: 700 }}>
+          <p style={{ margin: 0, paddingRight: "20px", fontWeight: 700 }}>
             Suzue 紗絵
           </p>
           <nav>

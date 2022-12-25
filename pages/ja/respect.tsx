@@ -98,6 +98,34 @@ export default function JaRespect() {
               プログラミングをしながら、作曲して、絵も描ければ描けるようになって生きていきたいと思っていた私の心の支えになっています。
             </p>
           </ResList>
+          <ResList
+            name="Kikuo"
+            youtube="@kikuo_sound"
+            twitter="kikuo_sound"
+            niconico="432349"
+          >
+            <p>
+              次世代のボカロを知りました。
+              <br />
+              当時あまりダーク系統なボカロ曲を聞いたことがなかったのですが、ボカロ曲でもこれほど暗くすることができるのかととても感動しました。
+              <br />
+              ダークでも、耳に優しい、それがかえってダークにしている、流石です...
+            </p>
+          </ResList>
+          <ResList
+            name="MARETU"
+            youtube="@MARETUch"
+            twitter="maretu01"
+            niconico="15918028"
+          >
+            <p>
+              DTMが本当に素敵!!
+              <br />
+              幼女調声も素晴らしく、最初聞いたときに初音ミクとは思いませんでした。
+              <br />
+              ボカロ曲でもこんなジャンルができるんだ!ととても感動したことを今でも忘れません。
+            </p>
+          </ResList>
         </div>
       </div>
       <div>
