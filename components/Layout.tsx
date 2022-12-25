@@ -32,11 +32,13 @@ export default function Layout({ children, title = "Suzue" }: Props) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <header style={{ position: "sticky", top: 0, backgroundColor: "white" }}>
+      <header style={{ position: "sticky", top: 0, backgroundColor: "white", zIndex: 1001, height: "26px" }}>
         <div style={{ display: "flex" }}>
+          <Link href="/" style={{color: "black"}}>
           <p style={{ margin: 0, paddingRight: "20px", fontWeight: 700 }}>
             Suzue 紗絵
-          </p>
+            </p>
+            </Link>
           <nav>
             <AutoLink href="/">Home</AutoLink> |{" "}
             <AutoLink href="/about">Gallery</AutoLink> |{" "}

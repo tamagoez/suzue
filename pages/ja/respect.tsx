@@ -7,9 +7,10 @@ export default function JaRespect() {
       <style jsx>{`
         h2 {
           position: sticky;
-          top: 0;
-          background-color: white;
+          top: 25px;
+          background-color: #ededed;
           margin-bottom: 0;
+          height: 30px;
         }
       `}</style>
       <h1>Respect 尊敬</h1>
@@ -62,9 +63,9 @@ export default function JaRespect() {
               <br />
               原点にして頂点。
               <br />
-              かいりきベアさんの、MMD解説の動画を何度も見返していた記憶があります。
+              かいりきベアさんのボカロ曲制作解説の動画を何度も見返していた記憶があります。
               <br />
-              イナイイナイ依存症 が、特に大好きです。
+              イナイイナイ依存症 が特に大好きです。
             </p>
           </ResList>
           <ResList
@@ -193,8 +194,11 @@ function ResList({
           margin: 0;
         }
       `}</style>
-      <h3 style={{ marginTop: "20px", marginBottom: "5px" }}>{name} さん</h3>
-      <div style={{ display: "flex", gap: "10px" }}>
+      <div style={{ display: "flex", gap: "10px" , marginTop: "15px"}}>
+        <div>
+          <h3 style={{margin: 0}}>{name} さん</h3>
+          </div>
+      <div style={{ display: "inline-flex", gap: "10px" }}>
         {youtube ? (
           <div>
             <a
@@ -229,7 +233,8 @@ function ResList({
             </a>
           </div>
         ) : null}
-      </div>
+        </div>
+        </div>
       <p
         id={`${name}1`}
         onClick={() => {
@@ -250,11 +255,11 @@ function ResList({
           document.getElementById(`${name}2`)!.style.display = "none";
         }}
         onSelect={() => false}
-        style={{ cursor: "pointer", display: "none" }}
+        style={{ cursor: "pointer", display: "none", margin: 0, padding: 0}}
       >
         ▲ 折り畳み
       </p>
-      <div id={name} style={{ display: "none", marginTop: "0px" }}>
+      <div id={name} style={{ display: "none", margin: "0px", padding: 0}}>
         {children}
       </div>
     </div>
