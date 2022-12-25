@@ -1,29 +1,30 @@
 import Link from "next/link";
 import Layout from "../components/Layout";
+import { AutoLink } from "../utils/urls";
 
 const IndexPage = () => (
   <>
     <h1>Suzue</h1>
     <ul>
       <li>
-        <Link href="/about">
+        <AutoLink href="/about">
           <span>Gallery</span>
-        </Link>
+        </AutoLink>
       </li>
       <li>
-        <Link href="/about">
+        <AutoLink href="/about">
           <span>Blog</span>
-        </Link>
+        </AutoLink>
       </li>
       <li>
-        <Link href="/about">
+        <AutoLink href="/about">
           <span>About</span>
-        </Link>
+        </AutoLink>
       </li>
       <li>
-        <Link href="/respect">
+        <AutoLink href="/respect">
           <span>Respect</span>
-        </Link>
+        </AutoLink>
       </li>
     </ul>
   </>

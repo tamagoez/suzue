@@ -21,6 +21,12 @@ export default function JaRespect() {
         <li>
           <a href="#mmd">MMD</a>
         </li>
+        <li>
+          <a href="#illustrator">イラストレーター</a>
+        </li>
+        <li>
+          <a href="#programmer">プログラマー</a>
+        </li>
       </ul>
       <div>
         <h2 id="vocalo">VOCALOID(及び広義ボカロ)</h2>
@@ -105,7 +111,7 @@ export default function JaRespect() {
             niconico="37960285"
           >
             <p>
-              Pizaさんに出会う前から私はMMDを知っていたのですが、Pizaさんの動画を見て、MMDやりたい！！と思わされました。
+              Pizaさんに出会う前から私はMMDを知っていたのですが、Pizaさんの動画を見て、MMDやりたい!!と思わされました。
               <br />
               エフェクトの使用がとても美しく、もう弟子にしてほしいくらいです...
             </p>
@@ -116,6 +122,21 @@ export default function JaRespect() {
         <h2 id="illustrator">イラストレーター</h2>
         <hr />
         <div></div>
+      </div>
+      <div>
+        <h2 id="programmer">プログラマー</h2>
+        <hr />
+        <div>
+          <ResList name="napoan" twitter="napoan">
+            <p>
+              NapoanさんのマイクラのWikiから知りました。
+              <br />
+              Napoanさんのお陰でVercelやNext.jsを知れました。
+              <br />
+              Docusaurusで疑問に思ったことについてのツイートに、わざわざ改善点を返信してくださりとても感謝しています。
+            </p>
+          </ResList>
+        </div>
       </div>
     </>
   );
@@ -153,8 +174,7 @@ function ResList({
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaYoutube />
-              {youtube}
+              <FaYoutube />({youtube})
             </a>
           </div>
         ) : null}

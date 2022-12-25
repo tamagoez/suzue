@@ -18,10 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
     }
     if (avalang.includes(lSlang) === false) lSlang = "en";
     console.log(lSlang);
-    if (
-      url.substring(1, 3) !== lSlang &&
-      url !== "/"
-    ) {
+    if (url.substring(1, 3) !== lSlang && url !== "/") {
       if (url.substring(3, 4) === "/")
         router.replace(`/${lSlang}/${url.substring(4)}`);
       else router.replace(`/${lSlang}${url}`);
@@ -38,8 +35,8 @@ export default function App({ Component, pageProps }: AppProps) {
         {/* <link rel="shortcut icon" href="/favicon.png" key="shortcutIcon" /> */}
         {/* <link rel="manifest" href="/manifest.json" /> */}
       </Head>
-      <Layout title="About | Next.js + TypeScript Example">
-      <Component {...pageProps} />
+      <Layout title="Suzue">
+        <Component {...pageProps} />
       </Layout>
     </>
   );

@@ -1,0 +1,14 @@
+import { useState } from "react";
+
+export default function Error404() {
+  const [returnchildren, setReturnchildren] = useState(
+    <>
+      <h1>404</h1>
+      <h2>リダイレクト中かも</h2>
+    </>
+  );
+  setTimeout(() => {
+    
+  }, 500);
+  return <>{returnchildren}</>;
+}
