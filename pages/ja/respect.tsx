@@ -9,8 +9,9 @@ export default function JaRespect() {
           position: sticky;
           top: 25px;
           background-color: #ededed;
-          margin-bottom: 0;
+          margin: 0;
           height: 30px;
+          margin-top: 10px;
         }
       `}</style>
       <h1>Respect 尊敬</h1>
@@ -192,74 +193,100 @@ function ResList({
         }
         p {
           margin: 0;
+          padding: 0;
+        }
+        .hidep {
+          display: none;
+        }
+        .showp {
+          display: block;
+          animation: slidein forwards 0.8s ease;
+        }
+        @keyframes slidein {
+          from {
+            opacity: 0%;
+            transform: translateY(-10px);
+          }
+
+          to {
+            opacity: 100%;
+            transform: translateY(0px);
+          }
         }
       `}</style>
-      <div style={{ display: "flex", gap: "10px" , marginTop: "15px"}}>
+      <div style={{ display: "flex", gap: "10px", marginTop: "15px" }}>
         <div>
-          <h3 style={{margin: 0}}>{name} さん</h3>
-          </div>
-      <div style={{ display: "inline-flex", gap: "10px" }}>
-        {youtube ? (
-          <div>
-            <a
-              href={`https://www.youtube.com/${youtube}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaYoutube />({youtube})
-            </a>
-          </div>
-        ) : null}
-        {twitter ? (
-          <div>
-            <a
-              href={`https://twitter.com/${twitter}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaTwitter />
-              (@{twitter})
-            </a>
-          </div>
-        ) : null}
-        {niconico ? (
-          <div>
-            <a
-              href={`https://www.nicovideo.jp/user/${niconico}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <SiNiconico />({niconico})
-            </a>
-          </div>
-        ) : null}
+          <p
+            id={`${name}1`}
+            onClick={() => {
+              document.getElementById(name)!.classList.add("showp");
+              document.getElementById(name)!.classList.remove("hidep");
+              document.getElementById(`${name}1`)!.style.display = "none";
+              document.getElementById(`${name}2`)!.style.display = "block";
+            }}
+            onSelect={() => false}
+            style={{ cursor: "pointer", display: "block" }}
+          >
+            ▼ <b>{name}</b> さん
+          </p>
+          <p
+            id={`${name}2`}
+            onClick={() => {
+              document.getElementById(name)!.classList.remove("showp");
+              document.getElementById(name)!.classList.add("hidep");
+              document.getElementById(`${name}1`)!.style.display = "block";
+              document.getElementById(`${name}2`)!.style.display = "none";
+            }}
+            onSelect={() => false}
+            style={{
+              cursor: "pointer",
+              display: "none",
+              margin: 0,
+              padding: 0,
+            }}
+          >
+            ▲ <b>{name}</b> さん
+          </p>
         </div>
+        <div style={{ display: "inline-flex", gap: "10px" }}>
+          {youtube ? (
+            <div>
+              <a
+                href={`https://www.youtube.com/${youtube}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaYoutube />({youtube})
+              </a>
+            </div>
+          ) : null}
+          {twitter ? (
+            <div>
+              <a
+                href={`https://twitter.com/${twitter}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaTwitter />
+                (@{twitter})
+              </a>
+            </div>
+          ) : null}
+          {niconico ? (
+            <div>
+              <a
+                href={`https://www.nicovideo.jp/user/${niconico}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SiNiconico />({niconico})
+              </a>
+            </div>
+          ) : null}
         </div>
-      <p
-        id={`${name}1`}
-        onClick={() => {
-          document.getElementById(name)!.style.display = "block";
-          document.getElementById(`${name}1`)!.style.display = "none";
-          document.getElementById(`${name}2`)!.style.display = "block";
-        }}
-        onSelect={() => false}
-        style={{ cursor: "pointer", display: "block" }}
-      >
-        ▼ 展開
-      </p>
-      <p
-        id={`${name}2`}
-        onClick={() => {
-          document.getElementById(name)!.style.display = "none";
-          document.getElementById(`${name}1`)!.style.display = "block";
-          document.getElementById(`${name}2`)!.style.display = "none";
-        }}
-        onSelect={() => false}
-        style={{ cursor: "pointer", display: "none", margin: 0, padding: 0}}
-      >
-        ▲ 折り畳み
-      </p>
-      <div id={name} style={{ display: "none", margin: "0px", padding: 0}}>
+      </div>
+
+      <div id={name} className="hidep" style={{ margin: "0px", padding: 0 }}>
         {children}
       </div>
     </div>

@@ -2,23 +2,29 @@ import { AppProps } from "next/app";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Layout from "../components/Layout";
-import { Zen_Kaku_Gothic_New, Noto_Sans_JP, IBM_Plex_Sans_JP, M_PLUS_1 } from "@next/font/google"
+import {
+  Zen_Kaku_Gothic_New,
+  Noto_Sans_JP,
+  IBM_Plex_Sans_JP,
+  M_PLUS_1,
+} from "@next/font/google";
+import "../styles/globals.css";
 
 const Font0 = M_PLUS_1({
-  weight: "400"
-})
+  weight: "400",
+});
 const Font1 = Zen_Kaku_Gothic_New({
   weight: "500",
-  subsets: ["latin"]
-})
+  subsets: ["latin"],
+});
 
 const Font2 = Noto_Sans_JP({
-  weight: "400"
-})
+  weight: "400",
+});
 
 const Font = IBM_Plex_Sans_JP({
-  weight: "400"
-})
+  weight: "400",
+});
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -51,11 +57,12 @@ export default function App({ Component, pageProps }: AppProps) {
       />*/}
         {/* <link rel="shortcut icon" href="/favicon.png" key="shortcutIcon" /> */}
         {/* <link rel="manifest" href="/manifest.json" /> */}
-      </Head><main className={Font.className}>
-      <Layout title="Suzue">
-        <Component {...pageProps} />
+      </Head>
+      <main className={Font.className}>
+        <Layout title="Suzue">
+          <Component {...pageProps} />
         </Layout>
-        </main>
+      </main>
     </>
   );
 }

@@ -12,7 +12,8 @@ export function AutoLink({ href, children }: { href: string; children: any }) {
 export function redirecturl() {
   // const router = useRouter();
   const url = location.pathname + location.search;
-  location.replace(replaceurl(url));
+  // location.replace(replaceurl(url));
+  return replaceurl(url);
 }
 
 export function replaceurl(href: string) {

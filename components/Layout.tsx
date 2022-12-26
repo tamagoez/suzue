@@ -22,7 +22,7 @@ export default function Layout({ children, title = "Suzue" }: Props) {
   function setLang(lang: string) {
     if (typeof window !== "undefined") {
       window.localStorage.setItem("viewlang", lang);
-      router.reload();
+      router.replace(redirecturl());
     }
   }
   return (
@@ -32,13 +32,21 @@ export default function Layout({ children, title = "Suzue" }: Props) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <header style={{ position: "sticky", top: 0, backgroundColor: "white", zIndex: 1001, height: "26px" }}>
+      <header
+        style={{
+          position: "sticky",
+          top: 0,
+          backgroundColor: "white",
+          zIndex: 1001,
+          height: "26px",
+        }}
+      >
         <div style={{ display: "flex" }}>
-          <Link href="/" style={{color: "black"}}>
-          <p style={{ margin: 0, paddingRight: "20px", fontWeight: 700 }}>
-            Suzue 紗絵
+          <Link href="/" style={{ color: "black" }}>
+            <p style={{ margin: 0, paddingRight: "20px", fontWeight: 700 }}>
+              Suzue 紗絵
             </p>
-            </Link>
+          </Link>
           <nav>
             <AutoLink href="/">Home</AutoLink> |{" "}
             <AutoLink href="/about">Gallery</AutoLink> |{" "}
