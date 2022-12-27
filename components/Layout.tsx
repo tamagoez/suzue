@@ -17,12 +17,13 @@ export default function Layout({ children, title = "Suzue" }: Props) {
     if (typeof window !== "undefined") {
       setViewlang(window.localStorage.getItem("viewlang"));
     }
-  }, []);
+  }, [router]);
 
   function setLang(lang: string) {
     if (typeof window !== "undefined") {
       window.localStorage.setItem("viewlang", lang);
-      router.replace(redirecturl());
+      // router.replace(redirecturl());
+      location.replace(redirecturl());
     }
   }
   return (
@@ -32,41 +33,45 @@ export default function Layout({ children, title = "Suzue" }: Props) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <header
-        style={{
-          position: "sticky",
-          top: 0,
-          backgroundColor: "white",
-          zIndex: 1001,
-          height: "26px",
-        }}
-      >
-        <div style={{ display: "flex" }}>
-          <Link href="/" style={{ color: "black" }}>
-            <p style={{ margin: 0, paddingRight: "20px", fontWeight: 700 }}>
-              Suzue 紗絵
-            </p>
-          </Link>
-          <nav>
-            <AutoLink href="/">Home</AutoLink> |{" "}
-            <AutoLink href="/about">Gallery</AutoLink> |{" "}
-            <AutoLink href="/about">About</AutoLink> |{" "}
-            <AutoLink href="/respect">Respect</AutoLink> |
-          </nav>
-          <select onChange={(e) => setLang(e.target.value)}>
-            <option value="" selected={viewlang === ""}>
-              Reset
-            </option>
-            <option value="ja" selected={viewlang === "ja"}>
-              日本語
-            </option>
-            <option value="en" selected={viewlang === "en"}>
-              English
-            </option>
-          </select>
-        </div>
-      </header>
-      {children}
+      <div style={{ minHeight: "100vh" }}>
+        <header
+          style={{
+            position: "sticky",
+            top: 0,
+            backgroundColor: "white",
+            zIndex: 1001,
+            height: "26px",
+          }}
+        >
+          <div style={{ display: "flex" }}>
+            <Link href="/" style={{ color: "black" }}>
+              <p style={{ margin: 0, paddingRight: "20px", fontWeight: 700 }}>
+                Suzue 紗絵
+              </p>
+            </Link>
+            <nav>
+              <AutoLink href="/">Home</AutoLink> |{" "}
+              <AutoLink href="/about">Gallery</AutoLink> |{" "}
+              <AutoLink href="/about">About</AutoLink> |{" "}
+              <AutoLink href="/respect">Respect</AutoLink> |{" "}
+              <AutoLink href="/eku">Suzue_ku</AutoLink> |{" "}
+              <AutoLink href="/zero">Suzue_0</AutoLink> |
+            </nav>
+            <select onChange={(e) => setLang(e.target.value)}>
+              <option value="" selected={viewlang === ""}>
+                Reset
+              </option>
+              <option value="ja" selected={viewlang === "ja"}>
+                日本語
+              </option>
+              <option value="en" selected={viewlang === "en"}>
+                English
+              </option>
+            </select>
+          </div>
+        </header>
+        {children}
+      </div>
       <footer>
         <hr />
         <span>©2022 Suzue(@Suzue_ku / @Suzue_ch)</span>
